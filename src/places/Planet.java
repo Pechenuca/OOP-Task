@@ -10,10 +10,6 @@ public class Planet extends Place {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Планета " + name;
-    }
 
     @Override
     public boolean equals(Object o) {

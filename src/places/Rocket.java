@@ -16,7 +16,7 @@ public class Rocket extends Place implements MovablePerson {
 
     @Override
     public void goToPlace(Place f) {
-        System.out.println(getName() + " летает вокруг " + f.get);
+        System.out.println(getName() + " летает вокруг " + f.getPlace());
 
     }
     public void flyTo(Rocket r, Place s){
