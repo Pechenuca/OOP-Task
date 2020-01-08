@@ -36,6 +36,7 @@ public class Znaika extends Human implements MovablePerson {
         return " ничего не видит";
     }
 
+
     public void look(Shorties S, Things thing, Rocket r) {
         if (vision == Vision.KEEN && r.getPlace().equals(S.getLocation())) {
             System.out.println(SeeThroughThing(thing) + " на коротышек и видит, как " + S.PullUp() + S.WaveHands());

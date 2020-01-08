@@ -6,8 +6,7 @@ public class Rocket extends Place implements MovablePerson {
     private String name = "Ракета";
 
     public String getName() {
-        return this.name = name;
-
+        return this.name = "ракета";
     }
 
 
@@ -17,10 +16,13 @@ public class Rocket extends Place implements MovablePerson {
 
     @Override
     public void goToPlace(Place f) {
-        System.out.println(getName() + " летает вокруг " + f.getPlace());
+        System.out.println(getName() + " летает вокруг " + f.get);
 
     }
-
+    public void flyTo(Rocket r, Place s){
+        r.goToPlace(s);
+        System.out.println("Ракета подлетает к улице");
+    }
 
 }
 
