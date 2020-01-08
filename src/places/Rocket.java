@@ -1,28 +1,25 @@
 package places;
 
+
 import movableObj.MovablePerson;
 
 public class Rocket extends Place implements MovablePerson {
-    private String name = "Ракета";
-
-    public String getName() {
-        return this.name = "ракета";
-    }
 
 
-    public Rocket(Place location) {
-        super(location);
+    public Rocket(Place location, String name) {
+        super(name, location);
     }
 
     @Override
     public void goToPlace(Place f) {
-        System.out.println(getName() + " летает вокруг " + f.getPlace());
+        System.out.println(getName() + " летает вокруг " + f.getName());
 
     }
-    public void flyTo(Rocket r, Place s){
-        r.goToPlace(s);
-        System.out.println("Ракета подлетает к улице");
-    }
 
+
+    @Override
+    public String getName() {
+        return "ракета";
+    }
 }
 

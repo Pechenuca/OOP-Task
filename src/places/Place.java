@@ -4,9 +4,11 @@ import java.util.Objects;
 
 public abstract class Place {
 
+
     private Place location;
 
-    public Place(Place location) {
+
+    public Place(String name, Place location) {
         this.location = location;
     }
 
@@ -26,5 +28,11 @@ public abstract class Place {
         return Objects.equals(location, p.getPlace());
     }
 
+    public abstract String getName();
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(location);
+    }
 }
 

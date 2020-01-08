@@ -27,9 +27,10 @@ public class Znaika extends Human implements MovablePerson {
 
     }
 
-    public String SeeThroughThing(Things thing) {
+    public String SeeThroughThing(Things thing, Znaika znaika) {
 
         if (thing.getseeThrough()) {
+            znaika.vision = Vision.KEEN;
 
             return getName() + " cмотрит через " + thing.getName();
         }
@@ -37,9 +38,9 @@ public class Znaika extends Human implements MovablePerson {
     }
 
 
-    public void look(Shorties S, Things thing, Rocket r) {
+    public void look(Shorties S, Things thing, Rocket r, Znaika znaika) {
         if (vision == Vision.KEEN && r.getPlace().equals(S.getLocation())) {
-            System.out.println(SeeThroughThing(thing) + " на коротышек и видит, как " + S.PullUp() + S.WaveHands());
+            System.out.println(SeeThroughThing(thing, znaika) + " на коротышек и видит, как " + S.PullUp() + S.WaveHands());
         }
     }
 
@@ -51,14 +52,14 @@ public class Znaika extends Human implements MovablePerson {
     public void Seems(Street s) {
         if (s.getTroubled()) {
             vision = Vision.LOW;
-            System.out.println(getName() + " трудно было что-то расмотреть" + " казалось, что " + s.getPlace() + " " + s.Waving() + s.Bubbling() + s.Boiling());
+            System.out.println(getName() + " трудно было что-то расмотреть - " + " казалось, что " + s.getName() + " " + s.Waving() + s.Bubbling() + s.Boiling());
         }
     }
 
     @Override
     public void goToPlace(Place r) {
 
-        System.out.println(getName() + " сидит " + r.getPlace());
+        System.out.println(getName() + " сидит " + location.getName());
     }
 
     @Override

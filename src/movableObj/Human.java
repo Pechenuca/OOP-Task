@@ -4,7 +4,7 @@ import places.Place;
 
 import java.util.Objects;
 
-abstract class Human {
+abstract class Human implements MovablePerson {
     abstract String dying();
     protected Place location;
     protected String name;

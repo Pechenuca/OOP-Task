@@ -9,6 +9,7 @@ public class Shorties extends Human implements MovablePerson {
     private String tooMany;
     private String head = "головеньки";
     private String hands = "руками";
+    private Place location;
 
     @Override
     String dying() {
@@ -23,6 +24,7 @@ public class Shorties extends Human implements MovablePerson {
     public String becomeTiny() {
         return tiny = "размером с маковое зернышко";
     }
+
     public String becomeTooMany() {
         return this.tooMany = "стало слишком много";
     }
@@ -34,15 +36,25 @@ public class Shorties extends Human implements MovablePerson {
     public String WaveHands() {
         return "махали " + hands;
     }
-    public void Filled(Place p, Place sw) {
 
-        System.out.println(getName() + " " + becomeTooMany() + " и они заполнили все " + p.getPlace() + " и " + sw.getPlace());
+    public void goToPlace(Place pv, Place sw, Shorties S) {
+        S.location = sw;
+        System.out.println(getName() + " " + becomeTooMany() + " и они заполнили все " + location.getName());
+        S.location = pv;
+        System.out.print(" и " + location.getName());
 
     }
+
+    public void goToPlace(Place s, Place h) {
+        location = h;
+        System.out.println(getName() + " выбегают из" + location.getName());
+        location = s;
+        System.out.println(" на " + location.getName());
+    }
+
+
     @Override
-    public void goToPlace(Place s) {
-        System.out.println(getName() + " выбегают " + s.getPlace());
+    public void goToPlace(Place p2) {
+
     }
-
-
 }

@@ -1,10 +1,16 @@
 package places;
 
 public class Pavement extends Place {
-    public Pavement(Place location) {
-        super(location);
+    private String name;
+    private Place location;
+    public Pavement(Place location, String name) {
+        super(name, location);
     }
 
+    @Override
+    public String getName() {
+        return "мостовая";
+    }
 
 
 }

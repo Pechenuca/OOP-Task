@@ -1,12 +1,14 @@
 package places;
 
+import movableObj.MovablePerson;
+
 import java.util.Objects;
 
-public class Planet extends Place {
+public class Planet extends Place implements MovablePerson {
 
     private final String name;
     public Planet(Place location, String name) {
-        super(location);
+        super(name, location);
         this.name = name;
     }
 
@@ -21,7 +23,17 @@ public class Planet extends Place {
     }
 
     @Override
+    public String getName() {
+        return "планета";
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public void goToPlace(Place p2) {
+
     }
 }
