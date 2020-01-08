@@ -10,7 +10,7 @@ public class Story {
         Rocket R = new Rocket(f);
         Znaika Z = new Znaika(R, "Знайка");
         Street s = new Street(f);
-        Place p = new Pavement(s);
+        Place pv = new Pavement(s);
         Shorties S = new Shorties(s, "коротышки");
         Place sw = new Sidewalk(f);
         Things binocular = new Things("бинокль", true);
@@ -22,7 +22,7 @@ public class Story {
         R.flyTo(R, s);
         Z.look(S, binocular, R);
         Z.Seems(S);
-        S.Filled(p, sw);
+        S.Filled(pv, sw);
         Z.Seems(s);
 
 
