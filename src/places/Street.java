@@ -1,13 +1,9 @@
 package places;
 
 public class Street extends Place {
-    private boolean troubled;
-    private String name;
-    private Place location;
 
     public Street(Place location, String name) {
         super(name, location);
-        this.location = location;
     }
 
     @Override
@@ -16,7 +12,8 @@ public class Street extends Place {
     }
 
     public boolean getTroubled() {
-        return this.troubled = true;
+        boolean troubled;
+        return troubled = true;
     }
 
     public String Waving() {

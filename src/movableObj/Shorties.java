@@ -41,7 +41,7 @@ public class Shorties extends Human implements MovablePerson {
         S.location = sw;
         System.out.println(getName() + " " + becomeTooMany() + " и они заполнили все " + location.getName());
         S.location = pv;
-        System.out.print(" и " + location.getName());
+        System.out.print(" и " + location.getName() + ", ");
 
     }
 
