@@ -1,13 +1,10 @@
 package movableObj;
 
-import Exceptions.NonZeroAngleException;
-import jdk.internal.org.objectweb.asm.Handle;
+import exceptions.NonZeroAngleException;
 import places.Place;
 import places.Rocket;
 import places.Street;
 import subject.Things;
-
-import java.io.IOException;
 
 public class Znaika extends Human implements MovablePerson {
 

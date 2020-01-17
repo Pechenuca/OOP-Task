@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class NonZeroAngleException extends Exception {
     public NonZeroAngleException(String message)  {

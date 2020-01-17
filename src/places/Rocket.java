@@ -1,9 +1,8 @@
 package places;
 
 
-import Exceptions.NegativeAgeException;
-import Exceptions.NonZeroAngleException;
-import jdk.internal.org.objectweb.asm.Handle;
+import exceptions.NegativeAgeException;
+import exceptions.NonZeroAngleException;
 import movableObj.MovablePerson;
 
 

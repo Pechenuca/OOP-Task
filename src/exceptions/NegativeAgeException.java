@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class NegativeAgeException extends RuntimeException{
     public NegativeAgeException(String message)  {

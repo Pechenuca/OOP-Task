@@ -1,4 +1,4 @@
-import Exceptions.NonZeroAngleException;
+import exceptions.NonZeroAngleException;
 import movableObj.Shorties;
 import movableObj.Znaika;
 import places.*;

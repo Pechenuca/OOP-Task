@@ -1,6 +1,6 @@
 package movableObj;
 
-import Exceptions.NegativeAgeException;
+import exceptions.NegativeAgeException;
 import places.Place;
 
 import java.util.Objects;
