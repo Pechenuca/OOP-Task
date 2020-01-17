@@ -1,5 +1,7 @@
 package movableObj;
 
+import Exceptions.NonZeroAngleException;
+import jdk.internal.org.objectweb.asm.Handle;
 import places.Place;
 import places.Rocket;
 import places.Street;
@@ -14,8 +16,8 @@ public class Znaika extends Human implements MovablePerson {
         return null;
     }
 
-    public Znaika(Place location, String name) {
-        super(location, name);
+    public Znaika(Place location, String name, int age) {
+        super(location, name, age);
     }
 
 
@@ -43,21 +45,44 @@ public class Znaika extends Human implements MovablePerson {
         engine.isActive();
         System.out.println("Двигатель активен");
     }
+
     public void turnOnMechanism(Rocket.Mechanism mechanism) {
+        class autoFuse {
+            private String name;
+            private boolean activated;
+
+            autoFuse(boolean activated) {
+                this.activated = activated;
+            }
+
+
+            public boolean getActivated() {
+                return true;
+            }
+
+
+        }
+
+
+        (new autoFuse(false)).getActivated();
+        System.out.println("авто-предохранитель снят");
         mechanism.isActive();
         System.out.println("Механзм поворота активен");
     }
-    public void turnRocket(Rocket.Mechanism mechanism, Rocket rocket) {
 
-            if (mechanism.isActive())
-                rocket.turnToHorizon(rocket, mechanism);
-            System.out.println(rocket.getName() + "повернулась");
+    public void turnRocket(Rocket.Mechanism mechanism, Rocket rocket) throws NonZeroAngleException {
+        if (mechanism.isActive()) {
+            System.out.println(rocket.getName() + " повернулась");
+            rocket.turnToHorizon(rocket, mechanism);
+        }
 
     }
+
     public void takeCourse(Place f, Rocket rocket, Rocket.Engine engine) {
-        if(engine.isActive())
+
+        if (engine.isActive())
+            System.out.println("Ракета берет курс на " + f.getName());
         rocket.goToPlace(f);
-        System.out.println("Ракета берет курс на " + f.getName());
     }
 
     public void look(Shorties S, Things thing, Rocket r, Znaika znaika) {
@@ -74,7 +99,8 @@ public class Znaika extends Human implements MovablePerson {
     public void Seems(Street s) {
         if (s.getTroubled()) {
             vision = Vision.LOW;
-            System.out.println(getName() + " трудно было что-то расмотреть - " + " казалось, что " + s.getName() + " " + s.Waving() + s.Bubbling() + s.Boiling());
+            System.out.println(getName() + " трудно было что-то расмотреть - " + " казалось, что " + s.getName() + " ");
+            s.getNoisy(s);
         }
     }
 

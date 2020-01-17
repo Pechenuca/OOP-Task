@@ -1,16 +1,26 @@
 package movableObj;
 
+import Exceptions.NegativeAgeException;
 import places.Place;
 
 import java.util.Objects;
 
-abstract class Human implements MovablePerson {
+abstract class Human implements MovablePerson  {
     abstract String dying();
+    private int age;
     protected Place location;
     protected String name;
-    public Human(Place location, String name) {
+    public Human(Place location, String name, int age) {
         this.location = location;
         this.name = name;
+        this.name = name;
+        this.age = age;
+        if(age > -1) {
+            this.age = age;
+        } else {
+            throw new NegativeAgeException("ошибка! возраст не может быть отрицательным");
+        }
+
     }
     public String getName() {
         return name;

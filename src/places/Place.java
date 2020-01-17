@@ -6,10 +6,12 @@ public abstract class Place {
 
 
     private Place location;
+    private String name;
 
 
     public Place(String name, Place location) {
         this.location = location;
+        this.name = name;
     }
 
     public Place getPlace() {

@@ -16,8 +16,8 @@ public class Shorties extends Human implements MovablePerson {
         return null;
     }
 
-    public Shorties(Place location, String name) {
-        super(location, name);
+    public Shorties(Place location, String name, int age) {
+        super(location, name, age);
     }
 
 
@@ -57,4 +57,7 @@ public class Shorties extends Human implements MovablePerson {
     public void goToPlace(Place p2) {
 
     }
+
+
+
 }

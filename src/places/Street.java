@@ -11,9 +11,10 @@ public class Street extends Place {
         return "улица";
     }
 
+    private boolean troubled;
+
     public boolean getTroubled() {
-        boolean troubled;
-        return troubled = true;
+        return this.troubled = true;
     }
 
     public String Waving() {
@@ -27,4 +28,22 @@ public class Street extends Place {
     public String Boiling() {
         return " кипит";
     }
+
+    public void getNoisy(Street s) {
+        Noisy iNoisy = new Noisy() {
+            @Override
+            public void noisy(Street s) {
+                System.out.println(Waving() + " " + Bubbling() + " " + Boiling());
+
+            }
+        };
+        iNoisy.noisy(s);
+    }
+
+
 }
+
+
+
+
+
